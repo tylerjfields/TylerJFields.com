@@ -1,0 +1,103 @@
+{
+  "product": {
+    "name": "TylerJFields.com",
+    "version": "1.0.0",
+    "description": "Personal site for Tyler J. Fields",
+    "author": "TJF@IOHQ.ORG"
+  },
+  "server": {
+    "port": "8080"
+  },
+  "directories": {
+    "source": "src",
+    "builds": "dist"
+  },
+  "variables": {
+    "home": "hello"
+  },
+  "deployments": [
+    {
+      "name": "s3",
+      "builds": ["web"],
+      "script": "deploy-s3.js"
+    }
+  ],
+  "builds": [
+    {
+      "name": "web",
+      "delimiter": "*",
+      "extensions": [ "css", "js", "html", "json" ],
+      "variables": {
+        "head": {
+          "title":          "TylerJFields - Architect, Developer, Enthusiast & Ginger.",
+          "meta": {
+            "description":  "A cloud-enthusiast solutions architect some doing things and stuff.",
+            "viewport":     "width=device-width, initial-scale=1.0, maximum-scale=1.0",
+            "robots":       "index, follow"
+          },
+          "og": {
+            "type":         "website",
+            "title":        "Tyler J Fields",
+            "description":  "A cloud-enthusiast solutions architect doing some things and stuff.",
+            "url":          "https://tylerjfields.com?ref=og",
+            "site_name":    "TylerJFields.com"
+          },
+          "twitter": {
+            "title":        "Tyler J Fields",
+            "description":  "MA cloud-enthusiast solutions architect doing some things and stuff.",
+            "site":         "@tjfio",
+            "creator":      "@tjfio"
+          }
+        },
+        "front": {
+          
+          "splash": {
+            "h1": "Tyler J. Fields",
+            "p": "Software Architect, Engineer, Devops Enthusiast & Entrepeneur."
+          },
+          
+          "media": {
+            "Medium": {
+              "link":   "https://medium.com/@TylerJFields",
+              "icon":   "<i class='fab fa-medium'></i>"
+            },
+            "Twitter": {
+              "link":   "https://twitter.com/tjfio",
+              "icon":   "<i class='fab fa-twitter'></i>",
+              "color":  "#1DA1F2"
+            },
+            "Facebook": {
+              "link":   "https://www.facebook.com/tjfio/",
+              "icon":   "<i class='fab fa-facebook'></i>",
+              "color":   "#4267B2"
+            },
+            "Reddit": {
+              "link":   "http://reddit.com/u/tylerjfields",
+              "icon":   "<i class='fab fa-reddit'></i>",
+              "color":  "#FF4500"
+            },
+            "LinkedIn": {
+              "link":   "https://www.linkedin.com/in/tjfio/",
+              "icon":   "<i class='fab fa-linkedin'></i>",
+              "color":  "#0077B5"
+            },
+            "Youtube": {
+              "link":   "https://www.youtube.com/channel/UCG7riPB3wGQACOvw05sKnAQ",
+              "icon":   "<i class='fab fa-youtube'></i>",
+              "color":  "red"
+            },
+            "Soundcloud": {
+              "link":   "https://soundcloud.com/TylerJFields",
+              "icon":   "<i class='fab fa-soundcloud'></i>",
+              "color":  "#FF4000"
+            },
+            "GitHub": {
+              "link":   "https://github.com/tylerjfields",
+              "icon":   "<i class='fab fa-github'></i>"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
